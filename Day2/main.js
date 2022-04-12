@@ -55,7 +55,37 @@ typeof(a);// will return null
 typeof(b);// will return String
 typeof(c);// will return number
 typeof(d);// will return boolean
-typeof(e);// will return object.
+typeof(e);// will return object.\
+
+let myName = "Ollie Tabooger"; //string
+let myNumber = 20; //number
+let myBigInt = 1234567891234567891234567891234567890n; //BigInt
+let myBool = false; boolean
+let myAge = null; //null value
+let dob; //undefined
+let myObject = {firstName:"Felix", lastName:"Cited"}; //object
+
+//String can be written using double or single quotes.
+let answer1 = "It's alright";             // Single quote inside double quotes
+let answer2 = "He is called 'Johnny'";    // Single quotes inside double quotes
+let answer3 = 'He is called "Johnny"';    // Double quotes inside single quotes
+
+//Extra large or extra small numbers can be written with scientific (exponential) notation.
+let myBigNumber = 123e5; //12300000
+let mySmallNumber = 123e-5; //0.00123
+
+//Finally we can use the typeOf operator in order to find out the type of the javascript variable.
+let x = "";
+typeof(x);// will return String
+let y = "String";
+typeof(y) // will return string also.
+let z;
+typeof(z) //Will have a value of undefined and a type of undefined.
+let w = null;
+typeof(w);// Will return Object and not of type null as expected.
+let myObj = {firstName:"Felix", lastName:"Cited"};
+typeof(myObj); //Will return Object.
+
 
 //String concatination
 
