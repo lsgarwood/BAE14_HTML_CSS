@@ -60,7 +60,7 @@ typeof(e);// will return object.\
 let myName = "Ollie Tabooger"; //string
 let myNumber = 20; //number
 let myBigInt = 1234567891234567891234567891234567890n; //BigInt
-let myBool = false; boolean
+let myBool = false; //boolean
 let myAge = null; //null value
 let dob; //undefined
 let myObject = {firstName:"Felix", lastName:"Cited"}; //object
@@ -133,4 +133,97 @@ let totalLeftToPay = (totalMoney-moneyPaidSoFar) ;
 
 console.log(`The total bill is £${totalMoney} the remaining amount of money to be paid is £${totalLeftToPay}`);
 
+//modifyMe - An arrayto show off our methods
+//Push and pop - stack - adding/removing variable from the end of a list/array
+//shift and unshift - from the start fi the list add/remove
 
+let modifyMe = [1,2,3,4,5,6,7,8,9]; // set up array
+console.log(modifyMe); // print it out
+
+modifyMe.pop(); // remove last element
+console.log(modifyMe); //
+
+const removeLastNum = modifyMe.pop(); 
+console.log(modifyMe);
+
+modifyMe.push(1,4,67,8);
+modifyMe.push("A number");
+console.log(modifyMe);
+
+const removeFirst = modifyMe.shift();
+console.log(modifyMe);
+
+modifyMe.unshift("Another One");
+console.log(modifyMe);
+
+// checking for equality
+// == equality
+// = assignment
+
+let variable = "Something"; // has a value
+console.log(1 == 1); //stores a boolean
+
+let booHoo = true;
+let booHooMan = true;
+
+console.log(booHoo == booHooMan);
+
+// == loose equality - as we also want to 
+
+console.log(booHoo == 1); // true == 1 so its technically correct but we want to check data type too
+
+// === use three signs to get strict equality
+// compares data types too
+
+// If Statements
+// (boolean) - JS will assume that the statement is read like
+//(boolean === true)
+if (booHoo) { 
+    console.log("booHoo is for you")
+} else {
+    console.log("I like ASOS anyway")
+}
+//(!boolean) = (boolean === false)
+// if (this condition is true) {
+//     ... do this
+// } else {
+//    ... do this instead
+// }
+// elif -- python exclusive
+// else if everyone else
+// or, and 
+//nested...complicated
+if (booHoo) { 
+    if (booHooMan) {
+    console.log("booHoo is for you") 
+    }
+} else {
+    console.log("I like ASOS anyway")
+}
+//do this instead
+if (booHoo && booHooMan) { 
+    console.log("booHoo is for you")
+} else {
+    console.log("I like ASOS anyway")
+}
+
+//ordering if statemnents is importnt as it runs through from beginning so if it hits true forts will stop running.
+
+let golfScore = ["hole in one", "eagle", "birdie", "par", "Bogey", "Double Bogey"]
+let strokes = 1, par
+
+//if the par for a course is five and the person has had 6 strokes thats a bogey
+
+if (strokes === 1) {
+    console.log(golfScore[0])
+} else if (strokes <= par - 2) {
+    console.log(golfScore[1])
+} else if (strokes === par - 1) {
+    console.log(golfScore[2])
+} else if (strokes === par) {
+    console.log(golfScore[3])
+} else if (strokes === par + 1) {
+    console.log(golfScore[4])
+} else if (strokes === par + 2) {
+    console.log(golfScore[5])
+}
