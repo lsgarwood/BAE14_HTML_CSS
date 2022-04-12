@@ -210,7 +210,7 @@ if (booHoo && booHooMan) {
 //ordering if statemnents is importnt as it runs through from beginning so if it hits true forts will stop running.
 
 let golfScore = ["hole in one", "eagle", "birdie", "par", "Bogey", "Double Bogey"]
-let strokes = 1, par
+let strokes = 2, par = 1
 
 //if the par for a course is five and the person has had 6 strokes thats a bogey
 
@@ -226,4 +226,39 @@ if (strokes === 1) {
     console.log(golfScore[4])
 } else if (strokes === par + 2) {
     console.log(golfScore[5])
+}
+
+//function
+
+//function golfGame(strokes,par);
+
+//loops- while, for
+//while loops are useful when searching insode arrays/string
+//we dont know how long the recursion may last for
+//info being input into a box and submitted for ex
+
+//for loop is essentially an iterative type that will run for x amount of time
+
+let famMemb = ["mr", "mrs", "child"]
+for (let i = 0; i < famMemb.length; i++ ) {
+    console.log(famMemb[i])
+}
+
+//Switches
+let num = 2
+switch (num) {
+    case 1:
+        console.log("one")
+        break
+    case 2: 
+        console.log("two")
+        break
+        // case 1:
+        // case 2:
+            // console.log("one and two")
+    case 3:
+        console.log("three")
+        break
+    default:
+        console.log("nothing to do here")
 }
