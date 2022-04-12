@@ -45,6 +45,17 @@ const trueOrFalse = false
 // JS data types- Number, String, Object, Array, Undefined, Null
 // undefined is a value that is undefined
 // null is no value
+let a;
+let b = "12345";
+let c = 12344;
+let d = true;
+let e = {a:"JavaScript"};
+
+typeof(a);// will return null
+typeof(b);// will return String
+typeof(c);// will return number
+typeof(d);// will return boolean
+typeof(e);// will return object.
 
 //String concatination
 
@@ -62,4 +73,34 @@ console.log(literalStuff)
 
 // camelCaseLooksLikeThis
 // snake_case_looks_like_this
+
+//console.log statements
+//console.log(); 
+//console.info();
+//console.warn();
+//console.error();
+
+// Day 2 JS Basics Ex 1
+console.log("Lauren");
+console.info("Garwood");
+console.warn("Norfolk");
+console.error("Libra");
+
+// Day 2 JS Basics Ex 2
+let myCar = "Audi";
+let myModel = "A5";
+console.log("My fave car is: " + myCar + " and fave model is: " + myModel);
+console.log(`My fave car is: ${myCar} and fave model is: ${myModel}`);
+
+//Day 2 JS BAsics Ex 3
+// Styling of each of the console functions is also possible using CSS.
+console.log("This is now %c the end of the exercises.","color: orange;font-family:fantasy; font-style: Bold; background-color: black;padding: 10px");
+
+// Day 2 Variables Ex 2
+let totalMoney = 4000;
+let moneyPaidSoFar = 2348;
+let totalLeftToPay = (totalMoney-moneyPaidSoFar) ;
+
+console.log(`The total bill is £${totalMoney} the remaining amount of money to be paid is £${totalLeftToPay}`);
+
 
