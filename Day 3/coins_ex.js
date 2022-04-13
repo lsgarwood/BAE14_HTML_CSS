@@ -113,3 +113,22 @@ let calcChange = (cost, amount) => {
 }
 
 calcChange(4.67, 20);
+
+//another way...apparently janky
+let calcChange = ( cost, amount) => {
+    // Not included all denominations
+changeInPence = (amount - cost) * 100;
+numberOfTens = Math.floor((changeInPence/1000));
+numberOfFives = Math.floor(((changeInPence%1000)/500));
+numberOfTwentyp = Math.floor((((changeInPence%1000)%500)/20));
+numberOfTwop = Math.floor(((((changeInPence%1000)%500)%20)/2));
+numberOfOnep = Math.floor((((((changeInPence%1000)%500)%20)%2)/1));
+
+console.log(`${numberOfTens} £10 note `);
+console.log(`${numberOfFives} £5 note`);
+console.log(`${numberOfTwentyp} 20p`);
+console.log(`${numberOfTwop} 2p`);   
+console.log(`${numberOfOnep} 1p`);   
+}
+
+calcChange(4.67, 40);
