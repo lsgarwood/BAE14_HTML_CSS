@@ -208,3 +208,105 @@ let convertData = JSON.parse(cookey);
 console.log(convertData);
 console.log(typeof convertData);
 
+//Truthy Falsey
+// All values are TRUTHY unless they are defined as FALSEY.
+
+// These variables are always FALSEY:
+// false
+// 0 (zero)
+// '' or "" (empty string)
+// undefined
+// null
+// NaN
+
+// Everything else is TRUTHY:
+// '0' - (String containing single digit 0 )
+// 'false' - (String containing text - 'false')
+// [] - (An empty array)
+// {} - (An empty object)
+// function(){} - (An 'empty' function)
+
+//Equality
+1 == "1"; // returns true
+
+1 == [1]; // returns true
+
+"1" == [1]; // returns true
+
+1 === "1"; // returns false
+
+1 === [1]; // returns false
+
+"1" === [1]; // returns false
+
+// Trurthy Falsey Exercises
+//1
+let strictA = true;
+let strictB = 1;
+
+console.log(strictA == strictB); // true 
+console.log(strictA === strictB); //false
+
+//2
+console.log(strictA != strictB); //false
+console.log(strictA !== strictB);//true
+
+//3
+let age = 10;
+
+if (age >= 18 && age <= 65) {
+    console.log("Youre age is within range!")
+} else if (age < 18) {
+    console.log("You are too young!")
+} else {
+    console.log("You are too wise!")
+}
+
+//4
+
+let age1 = 25;
+
+let isAge = age1 >= 50 ? "50 or over :(":"Under 50 PHEW!";
+console.log(isAge);
+
+//Functions
+//both will run here
+
+multiply(18,3);
+function multiply(a,b) {
+    console.log(a*b);
+}
+multiply(2,6);
+
+//hoisting -- is good but not ideal in every circumstance - try and avoid by using const
+
+//anonymous functions default to const
+//declared like const
+//but both of these wont run
+//divide (12,6) <--- placed above bad syntax cannot access when const unlike above
+
+const divide = function(a,b) { //function keyword not neccessary
+    console.log(a/ b)
+}
+
+divide(10,2)
+
+//arrow functions -- for smaller functions, quick, often declared within other functions
+
+const newFunc = () => console.log("Hello Friend");
+newFunc();
+
+const addition = (a,b) => console.log(a+b);
+const sub = (a,b) => console.log(a-b);
+
+// The main consideration is function declarations (functions with a name) vs function expressions (no name/anonymous).
+// //declaration
+// function myFunction() {}
+// //expression
+// const myFunction = function() {}
+// //ES6 friendly expression
+// const myFunction = () => {}
+// Function declarations are hoisted, function expressions are not. Basically, it boils down to the idea of polluting (over using) what we call the 'Global scope' which is where things get hoisted to, to be accessed from anywhere.
+// You shouldn't need hoisting to help your program function if you write in a structured, well designed way.
+// So in most cases function expressions are preferred now.
+
