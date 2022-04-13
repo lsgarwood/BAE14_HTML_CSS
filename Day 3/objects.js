@@ -286,10 +286,16 @@ multiply(2,6);
 //divide (12,6) <--- placed above bad syntax cannot access when const unlike above
 
 const divide = function(a,b) { //function keyword not neccessary
-    console.log(a/ b)
+    console.log(a/b)
 }
 
 divide(10,2)
+
+const subtract = function(a,b) {
+    console.log(a-b)
+}
+
+subtract(12,8)
 
 //arrow functions -- for smaller functions, quick, often declared within other functions
 
@@ -310,3 +316,12 @@ const sub = (a,b) => console.log(a-b);
 // You shouldn't need hoisting to help your program function if you write in a structured, well designed way.
 // So in most cases function expressions are preferred now.
 
+//Function and arrow functions 
+//Ex 1
+const welcome = (name,age,gender) => console.log(`My name is ${name}, I am ${age} years old and of gender ${gender}`);
+
+welcome("sally",22,"female");
+
+//Ex2 
+const powerUp = (n1,n2) => Math.pow(n1,n2);
+console.log(powerUp(3,3));
