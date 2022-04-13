@@ -28,7 +28,6 @@ function save() {
     countEl.textContent = count;
 
     //historyEl.innerHTML += "<li>" + count + "<li/>";
-
     // for (let i = 0; i < saveHistory.length; i++) {
     //     historyEl.innerHTML += "<li>" + saveHistory[i] + "</li>"
     // }
