@@ -1,3 +1,4 @@
+'use strict';
 // Objects
 
 //Data types
@@ -49,14 +50,16 @@ chrisCar.year = 1980
 console.log(chrisCar)
 
 //Nested array
-let laurenCar = [{
+let laurenCar = {
+    "Car": {
     name:"Lauren's supercar",
     make:"Audi",
     model:"A5",
     year:2001,
     colour:"yellow",
     "weird one": "Boo"
-}]
+    }
+}
 
 
 console.log(laurenCar[0])
@@ -101,7 +104,7 @@ console.log(d.sort()); // ["apple", "banana", "grapes", "pear", "strawberries"]
 console.log(d.reverse());//["strawberries", "pear", "grapes", "banana", "apple"]
 console.log(d.join()); //strawberries,pear,grapes,banana,apple
 
-e = d.join("-");
+let e = d.join("-");
 console.log(e);// strawberries-pear-grapes-banana-apple
 
 //push
@@ -143,3 +146,64 @@ console.log(myArray.shift());
 for(let eachElement of myArray) {
     console.log(eachElement);
 }
+
+let daveCar = {
+    "name" : "Daves Car",
+    "make" : "Peugeot",
+    "model" : "12345",
+    "year" : 2018,
+    "colour" : "vibrant red"
+}
+
+// make an array to store cars
+let garage = [chrisCar,daveCar, {"make":"Mercedes","model":"S80"}];
+console.log(garage);
+
+console.log("/n");
+
+//Enhanced for loop
+//Initialisation, condition, after effect
+//for (objects in array)
+
+for (let car in garage) {
+    console.log(garage[car].make)
+}
+
+//nested array
+let massiveArray = {
+    "smallArray" : {
+        "students" : [{
+            "name" : "Dan",
+            "DOB" : "15.16.27",
+            "location" : "Barcelona"
+        },{
+            "name" : "cansu",
+            "DOB" : "11.09.87",
+            "location" : "Peru"
+        }]
+    }
+}
+
+console.log(massiveArray);
+
+// to access items use JSON.stringify (object object)
+let convertMassive = JSON.stringify(massiveArray)
+console.log(convertMassive)
+
+//accessing specifics
+let getCansu = JSON.stringify(massiveArray.smallArray.students[0].name)
+console.log(getCansu);
+
+console.log(typeof getCansu);
+
+//JSON.parse
+let cookey = `{"name":"chris"}`
+//this is in string form
+//local storage -- storage of strings
+//session storage -- worth looking into! 
+//realtional- mySQL/nonrelational database-mongodb
+
+let convertData = JSON.parse(cookey);
+
+console.log(convertData);
+console.log(typeof convertData);
