@@ -24,8 +24,32 @@ avaialable immediately, some time in the future or never at all
 let prom = new Promise((resolve, reject) => {
     let theNumberTen = 5 + 5;
     if (theNumberTen === 3) {
+        // we say what happens in the success outcome
         resolve(console.log("yay"));
     } else {
+        // we say what happens in the reject outcome
         reject(console.log("Oh no"))
     }
 })
+
+// Exercise
+const increase = (val) => {
+    alert(`Your new value is ${val+10}`);
+}
+
+const userInput = (enter) => {
+    let val = parseInt(promt("Please enter a value"));
+    enter(val);
+}
+userInput(increase)
+
+// const increase = (val) => {
+//     alert(`The new value is ${val+10}`);
+// }
+
+// const parent = (child) => {
+//     let value = parseInt(prompt("Please enter a value"));
+//     child(value);
+// }
+
+// parent(increase);
