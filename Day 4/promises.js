@@ -34,15 +34,16 @@ let prom = new Promise((resolve, reject) => {
 })
 
 // Exercise
-// const increase = (val) => {
-//     alert(`Your new value is ${val+10}`);
-// }
+const userInput = (enter) => {
+    let val = parseInt(prompt("Please enter a value"));
+    enter(val);
+}
 
-// const userInput = (enter) => {
-//     let val = parseInt(prompt("Please enter a value"));
-//     enter(val);
-// }
-// userInput(increase)
+const increase = (val) => {
+    alert(`Your new value is ${val+10}`);
+}
+
+userInput(increase);
 
 // const increase = (val) => {
 //     alert(`The new value is ${val+10}`);
