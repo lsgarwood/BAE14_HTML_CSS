@@ -1,15 +1,23 @@
 
 // GET REQUEST
+//LONG WAY
 function getTodos() {
+//     //console.log('GET Request');
+//     axios({
+//         method: 'get',
+//         url: "https://jsonplaceholder.typicode.com/todos",
+//         params: {   // add url params to get specific return
+//             _limit:20
+//         }
+//     }).then(res => showOutput(res))
+//     .catch(err => alert(err));
+// } 
+//SHORT WAY
     //console.log('GET Request');
-    axios({
-        method: 'get',
-        url: "https://jsonplaceholder.typicode.com/todos",
-        params: {
-            _limit:20
-        }
-    }).then(res => showOutput(res))
-    .catch(err => alert(err));
+    axios
+      .get("https://jsonplaceholder.typicode.com/todos?_limit=20")
+      .then(res => showOutput(res))
+      .catch(err => alert(err));
 }
 
 // GET ALL
@@ -19,49 +27,106 @@ function getAllPosts() {
     .catch(err => alert(err));
   }
 
-  // POST REQUEST  
+  // POST REQUEST 
+  //LONG WAY 
   function addTodo() {
-    axios ({
-        method: 'post',
-        url: 'https://jsonplaceholder.typicode.com/posts',
-        data: {
-            title:"i am new",
-            completed: true
-        }
-    }).then(res => showOutput(res))
+    // axios ({
+    //     method: 'post',
+    //     url: 'https://jsonplaceholder.typicode.com/todos',
+    //     data: {
+    //         title:"i am new",
+    //         completed: true
+    //     }
+    // }).then(res => showOutput(res))
+    // .catch(err => alert(err));
+
+    //SHORT WAY
+    axios 
+      .post('https://jsonplaceholder.typicode.com/todos', {
+        title:"i am new",
+        completed: true
+      })
+      .then(res => showOutput(res))
+      .catch(err => alert(err));
+  }
+
+
+  // PUT/PATCH REQUEST  
+  // put entire resource
+  // post individual
+  function updateTodo() {
+    // we need to specify what we are changing
+    // PATCH LONG WAY
+    // axios ({
+    //     method: "patch",
+    //     url: 'https://jsonplaceholder.typicode.com/todos/5',
+    //     data: {
+    //         title: "Im watching you!"
+    //     }
+    // }).then(res => showOutput(res))
+    // .catch(err => alert(err));
+    // PATCH SHORT WAY
+    // axios
+    //   .patch("https://jsonplaceholder.typicode.com/todos/1", {
+    //     title: "Updated Todo",
+    //     completed: true
+    // })
+    // .then(res => showOutput(res))
+    // .catch(err => alert(err));
+    // // PUT SHORT WAY
+    axios
+      .put("https://jsonplaceholder.typicode.com/todos/1", {
+        title: "Updated Todo",
+        completed: true
+    })
+    .then(res => showOutput(res))
     .catch(err => alert(err));
   }
 
-  // PUT/PATCH REQUEST  
-  function updateTodo() {
-    // we need to specify what we are changing
-    axios ({
-        method: "patch",
-        url: 'https://jsonplaceholder.typicode.com/posts/5',
-        data: {
-            title: "Im watching you!"
-        }
-    }).then(res => showOutput(res))
-    .catch(err => alert(err));
-  }
 
   // DELETE REQUEST  
   function removeTodo() {
-    axios({
-        method:"DELETE",
-        url: "https://jsonplaceholder.typicode.com/posts/5"
-      }).then(res => showOutput(res))
+    // LONG WAY
+    // axios({
+    //     method:"DELETE",
+    //     url: "https://jsonplaceholder.typicode.com/todos/5"
+    //   }).then(res => showOutput(res))
+    //   .catch(err => alert(err));
+    // }
+    // SHORT WAY
+    axios
+      .delete("https://jsonplaceholder.typicode.com/todos/1")
+      .then(res => showOutput(res))
       .catch(err => alert(err));
-    }
+  }
 
   // SIMULTANEOUS DATA  
   function getData() {
-    console.log('Simultaneous Request');
+    axios.all([
+      axios.get("https://jsonplaceholder.typicode.com/todos?_limit=5"),
+      axios.get("https://jsonplaceholder.typicode.com/posts?_limit=5")
+    ])
+      .then(axios.spread((todos, posts) => showOutput(posts)))
+      .catch(err => alert(err));
   }
 
   // CUSTOM HEADERS  
   function customHeaders() {
-    console.log('Custom Headers');
+    const config = {
+      headers: {
+        "Content-Type": "Application-Jason",
+        Authorisation: "sometoken"
+      }
+    };
+    axios 
+      .post('https://jsonplaceholder.typicode.com/todos', {
+        title:"i am new",
+        completed: true
+        }, 
+        config
+      )
+      .then(res => showOutput(res))
+      .catch(err => alert(err));
   }
 
   // TRANSFORMING REQUESTS & RESPONSES  
@@ -80,6 +145,19 @@ function getAllPosts() {
   }
 
   // INTERCEPTING REQUESTS & RESPONSES  
+  axios.interceptors.request.use(
+    config => {
+      console.log(
+        `${config.method.toUpperCase()} request sent to ${
+          config.url} at ${new Date().getTime()}`);
+
+      return config
+    },
+    error => {
+      return Promise.reject(error);
+    }
+  );
+
   // AXIOS INSTANCES  
   // Show output in browser  
   function showOutput(res) {
@@ -124,4 +202,4 @@ function getAllPosts() {
   document.getElementById('headers').addEventListener('click', customHeaders);
   document.getElementById('transform').addEventListener('click', transformResponse);
   document.getElementById('error').addEventListener('click', errorHandling);
-  document.getElementById('cancel').addEventListener('click', cancelToken);
+  document.getElementById('cancel').addEventListener('click', cancelToken); 
