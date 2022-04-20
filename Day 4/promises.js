@@ -1,16 +1,17 @@
 // Callbacks are esentially functions that take inanother function as a parameter
 
-const helloSir = (name1) => {
-    alert("Hello Sir:" + name1);
-    return name1
+const helloSir = (name) => {
+    alert("Hello Sir: " + name);
+    return name
 }
 
 const saveName = (callback) => {
-    let username = promt("Please enter  username:");
+    let username = prompt("Please enter username:");
     callback(username);
+    console.log ("Finished")
 }
 
-saveName(helloSir("Lauren"));
+saveName(helloSir);
 
 //promises
 
@@ -28,20 +29,20 @@ let prom = new Promise((resolve, reject) => {
         resolve(console.log("yay"));
     } else {
         // we say what happens in the reject outcome
-        reject(console.log("Oh no"))
+        reject(console.log("Oh no"));
     }
 })
 
 // Exercise
-const increase = (val) => {
-    alert(`Your new value is ${val+10}`);
-}
+// const increase = (val) => {
+//     alert(`Your new value is ${val+10}`);
+// }
 
-const userInput = (enter) => {
-    let val = parseInt(promt("Please enter a value"));
-    enter(val);
-}
-userInput(increase)
+// const userInput = (enter) => {
+//     let val = parseInt(prompt("Please enter a value"));
+//     enter(val);
+// }
+// userInput(increase)
 
 // const increase = (val) => {
 //     alert(`The new value is ${val+10}`);
