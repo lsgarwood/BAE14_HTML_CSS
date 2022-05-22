@@ -17,11 +17,5 @@ let story1 = (
 
 console.log(story1);
 
-let story2 = (
-
-    ``
-
-);
-
 
 
