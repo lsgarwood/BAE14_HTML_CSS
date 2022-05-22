@@ -1,4 +1,4 @@
-let total = 0;
+let total = 15;
 
 function selectACard(){
     let value = Math.floor((Math.random() * 13) + 1);
@@ -7,12 +7,10 @@ function selectACard(){
 
 function displayPlayerTotal(){
     if(total >21){
-        let totalHeld = "You've gone Bust";
-        let resultDiv = "Dealer Wins";
-
+        return "You have gone bust, dealer wins"
     }
     else{
-        let totalHeld = "Your hand total is : " + total;
+        return "Your hand total is : " + total;
     }
 }
 
