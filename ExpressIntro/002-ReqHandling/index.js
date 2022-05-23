@@ -51,6 +51,12 @@ app.get("/getSuperHeroesName/:name", (req) => {
     console.log(req.params)
 });
 
+app.get("/name/:name", (req, res) => {
+    const name = req.params.name;
+    console.log(name);
+    res.status(202).send(`Hi ${name}, how are you?`)
+});
+
 app.delete('/deleteSuperHeroes', (req, res) => {
     console.log("working");
     res.status(202).send("Your superhero was deleted");
@@ -87,6 +93,7 @@ app.get('/getEx', (req, res) => {
     console.log(typeof(query));
     res.status(200).send("okey dokey");
 });
+
 //Create 
 app.post("/createNewEx", (req, res) => {
     const body = req.body;
