@@ -14,8 +14,11 @@ const movieSchema = new Schema({
         minLength: 3
     },
     releaseYear: Number,
-    rating: Number,
-    ageRating: String
+    ratings: [{
+        rating: Number,
+        ageRating: String,
+        review: String
+    }],
 });
 
 //make a model of our movie using the schema
