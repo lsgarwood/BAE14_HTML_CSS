@@ -3,11 +3,11 @@ const express = require("express");
 const app = express();
 
 app.get("/helloworld", () => { 
-    console.log("Hello, World!"); 
+    return console.log("Hello, World!"); 
 });
 
 app.get("/hello", (req, res) => {
-    res.send("Hello, my name is LG!");
+    return res.send("Hello, my name is LG!");
 });
 
 app.get('/read', (req, res) => { 
@@ -15,7 +15,7 @@ app.get('/read', (req, res) => {
 });
 
 app.post('/create', (req, res) => {
-    console.log('create');
+    return console.log('create');
 });
 
 app.put('/replace', (req, res) => {
