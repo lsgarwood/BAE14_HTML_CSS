@@ -4,6 +4,8 @@ import ManagerForm from './components/002-Forms/FormsWithState/ManagerForm';
 import PrintText from './components/002-Forms/PrintText';
 import PetCardManager from './components/003-PetCardEx/PetCardManager';
 import OrderForm from './components/004-PizzaEx/OrderForm';
+import PizzaArrayForm from './components/005-ArrayObjects/PizzaArrayForm';
+
 
 import './css/App.css';
 
@@ -16,8 +18,9 @@ function App() {
       <PrintText/>
       <PetCardManager/>
       <ManagerForm/> 
-      */}
       <PetCardManager/>
+      */}
+      <PizzaArrayForm/>
     </div>
   );
 }

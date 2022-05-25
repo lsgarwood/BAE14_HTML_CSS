@@ -1,8 +1,8 @@
-const PetName = ({setData}) => {
+const PetName = ({setName}) => {
     return ( 
         <>
         <h5>Enter pet name:</h5>
-        <input type="text" name="name" onChange={(event) => {setData(event)}}/>
+        <input type="text" name="name" onChange={(event) => {setName(event)}}/>
         </>
      );
 }

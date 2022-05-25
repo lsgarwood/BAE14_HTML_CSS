@@ -1,7 +1,5 @@
 const PetIsCute = ({setIsCute}) => {
-
-
-
+    
     return ( 
         <>
         <h5>Am I cute or what?!</h5>
