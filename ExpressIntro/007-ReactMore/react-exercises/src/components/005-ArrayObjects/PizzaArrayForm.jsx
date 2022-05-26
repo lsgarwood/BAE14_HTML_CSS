@@ -1,5 +1,4 @@
 import { useState } from "react";
-import PizzaDisplayForm from "./PizzaDisplayForm.jsx";
 import PizzaOrder from "./PizzaOrder.jsx";
 
 const PizzaArrayForm = () => {
@@ -46,7 +45,8 @@ const PizzaArrayForm = () => {
             <input type="radio" name="stuffedCrust" value="Yes" onChange={(event) => {setData(event)}}/>Yes
             <input type="radio" name="stuffedCrust" value="No" onChange={(event) => {setData(event)}}/>No
             <button type="button" onClick={addToArray}> Click to Order! </button>
-            <button type="button" onClick={() => console.log(pizzaArray)}> Print Orders! </button>
+            <button type="button" onClick={<PizzaOrder/>}> Print Orders! </button>
+            
         </div>
      );
 }
