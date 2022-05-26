@@ -33,6 +33,10 @@ const PizzaArrayForm = () => {
         setPizzaData({});
     }
 
+    const pizzaList = () => {
+        
+    }
+
     return ( 
         <div>
             <label name="flavour">Flavour</label>
@@ -45,8 +49,7 @@ const PizzaArrayForm = () => {
             <input type="radio" name="stuffedCrust" value="Yes" onChange={(event) => {setData(event)}}/>Yes
             <input type="radio" name="stuffedCrust" value="No" onChange={(event) => {setData(event)}}/>No
             <button type="button" onClick={addToArray}> Click to Order! </button>
-            <button type="button" onClick={<PizzaOrder/>}> Print Orders! </button>
-            
+            <button type="button" onClick={pizzaList}> Print Orders! </button>
         </div>
      );
 }

@@ -30,18 +30,19 @@ function App() {
       <PetCardManager/>
       <PizzaArrayForm/>
     </div> */}
-    <BrowserRouter>
-    {/* This will be rendered on EVERY PAGE */}
+    <PizzaArrayForm/>
+    {/* <BrowserRouter>
+    
     <Nav/>
     <Routes>
-        {/* When the URL path is / take you to element home */}
+     
         <Route path="/" element={<Home/>}/>
-        {/* When the URL path is /about take you to element About */}
+       
         <Route path ="/about" element = {<About/>}/>
-        {/* Route with an ID parameter, id can be used in the web page */}
+
         <Route path="/shop" element ={<Shop/>}/>
     </Routes>
-  </BrowserRouter>
+    </BrowserRouter> */}
     </>
   );
 }
