@@ -12,6 +12,7 @@ const PizzaArrayForm = () => {
 
     const [pizzaData, setPizzaData] = useState({});
     const [pizzaArray, setPizzaArray] = useState([]);
+
     
     const setData = (event) => {
         const {name, value} = event.target;
@@ -31,14 +32,12 @@ const PizzaArrayForm = () => {
         console.log("Your order was added to the array!");
 
         setPizzaData({});
-    }
-
-    const pizzaList = () => {
-        
+        console.log(pizzaArray)
     }
 
     return ( 
         <div>
+            <form>
             <label name="flavour">Flavour</label>
             <input type="text" name="flavour" onChange={(event) => {setData(event)}}/>
             <label name="size">Size</label>
@@ -49,7 +48,12 @@ const PizzaArrayForm = () => {
             <input type="radio" name="stuffedCrust" value="Yes" onChange={(event) => {setData(event)}}/>Yes
             <input type="radio" name="stuffedCrust" value="No" onChange={(event) => {setData(event)}}/>No
             <button type="button" onClick={addToArray}> Click to Order! </button>
-            <button type="button" onClick={pizzaList}> Print Orders! </button>
+            </form>
+            {
+                pizzaArray.map((pizzaObj, key) => {
+                    return (<PizzaOrder data={pizzaObj} key={key}/>)
+                })
+            }
         </div>
      );
 }
