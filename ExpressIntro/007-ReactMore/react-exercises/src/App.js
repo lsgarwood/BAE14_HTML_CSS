@@ -17,6 +17,8 @@ import Nav from './components/006-Routing/Nav';
 import Home from './components/006-Routing/Home';
 import About from './components/006-Routing/About';
 import Shop from './components/006-Routing/Shop';
+import Clock from './components/007-Hooks/Clock';
+import Bar from './components/008-DataRequests/Bar';
 
 function App() {
   return (
@@ -29,8 +31,9 @@ function App() {
       <ManagerForm/> 
       <PetCardManager/>
       <PizzaArrayForm/>
+      <Clock/>
     </div> */}
-    <PizzaArrayForm/>
+    <Bar/>
     {/* <BrowserRouter>
     
     <Nav/>

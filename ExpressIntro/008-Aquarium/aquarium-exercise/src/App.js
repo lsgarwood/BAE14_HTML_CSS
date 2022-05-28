@@ -17,9 +17,9 @@ function App() {
       <BrowserRouter>
       <Nav/>
         <Routes>
-            <Route path="/" element={<Home/>}/>
+            <Route path="/home" element={<Home/>}/>
             <Route path ="/about" element = {<About/>}/>
-            <Route path="/results" element ={<Results/>}/>
+            <Route path="/results/:id" element ={<Results/>}/>
             <Route path="/form" element ={<Form/>}/>
         </Routes>
       <Footer/>

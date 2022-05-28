@@ -1,6 +1,12 @@
+import { useParams } from "react-router-dom";
+
 const Results = () => {
+
+    const {id} = useParams;
+    console.log(id);
+
     return ( 
-        <h3>This is going to be fishy results</h3>
+        <h3>Your fishy search result: {id}</h3>
      );
 }
  
